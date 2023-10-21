@@ -3,8 +3,8 @@
 /**
  * swap_nodes - swaps two nodes in a doubly linked list.
  * @list: a pointer to a pointer to the head of the linked list.
- * @a: the first node to be swapped.
- * @b: the second node to be swapped.
+ * @node1: the first node to be swapped.
+ * @node2: the second node to be swapped.
  */
 void swap_nodes(listint_t **list, listint_t *node1, listint_t *node2)
 {
@@ -38,13 +38,11 @@ void cocktail_sort_list(listint_t **list)
 
 	if (!list || !(*list) || !(*list)->next)
 		return;
-
 	start = end = NULL;
 	while (swapped)
 	{
 		swapped = 0;
 		current = *list;
-
 		/* Move from left to right (forward) */
 		while (current->next != end)
 		{
@@ -57,12 +55,10 @@ void cocktail_sort_list(listint_t **list)
 			else
 				current = current->next;
 		}
-
 		end = current;
 		if (!swapped)
 			break;
 		swapped = 0;
-
 		/* Move from right to left (backward) */
 		while (current->prev != start)
 		{
@@ -75,7 +71,6 @@ void cocktail_sort_list(listint_t **list)
 			else
 				current = current->prev;
 		}
-		
 		start = current;
 	}
 }
