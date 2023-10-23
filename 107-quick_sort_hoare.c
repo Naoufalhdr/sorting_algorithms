@@ -68,8 +68,8 @@ void hoare_sort_recursive(int *array, size_t low, size_t high, size_t size)
 	{
 		pivot = hoare_partition(array, low, high, size);
 
-		hoare_recursive(array, low, pivot - 1, size);
-		hoare_recursive(array, pivot, high, size);
+		hoare_sort_recursive(array, low, pivot - 1, size);
+		hoare_sort_recursive(array, pivot, high, size);
 	}
 }
 
